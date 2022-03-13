@@ -21,6 +21,7 @@ function majorityElement1(nums: number[]): number[] {
     return result;
 };
 
+export { };
 
 function majorityElement(nums: number[]): number[] {
     const count: number = Math.floor(nums.length / 3);

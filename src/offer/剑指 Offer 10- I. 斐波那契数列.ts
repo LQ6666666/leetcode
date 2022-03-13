@@ -14,3 +14,5 @@ function fib(n: number): number {
 
     return r;
 };
+
+export { };

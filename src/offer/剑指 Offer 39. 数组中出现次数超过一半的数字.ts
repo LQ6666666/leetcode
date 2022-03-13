@@ -11,7 +11,7 @@ function majorityElement(nums: number[]): number {
                 return num;
             }
 
-            map.set(num,value);
+            map.set(num, value);
         } else {
             map.set(num, 1);
         }
@@ -19,3 +19,5 @@ function majorityElement(nums: number[]): number {
 
     return nums[0];
 };
+
+export { };

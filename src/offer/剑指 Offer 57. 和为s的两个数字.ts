@@ -31,3 +31,5 @@ function twoSum(nums: number[], target: number): number[] {
 
     return nums;
 };
+
+export { };

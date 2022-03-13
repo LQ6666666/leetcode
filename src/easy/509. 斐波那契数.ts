@@ -22,3 +22,5 @@ function fib(n: number): number {
 
     return second;
 };
+
+export { };
