@@ -21,11 +21,27 @@ function guess(num: number): number {
     }
 }
 
+// function guessNumber(n: number): number {
+//     let left: number = 1, right: number = n;
+
+//     while (left < right) {
+//         const mid = Math.floor(left + (right - left) / 2); 
+
+//         if (guess(mid) <= 0) {
+//             right = mid;
+//         } else {
+//             left = mid + 1;
+//         }
+//     }
+
+//     return left;
+// };
+
 function guessNumber(n: number): number {
     let left: number = 1, right: number = n;
 
     while (left < right) {
-        const mid = Math.floor(left + (right - left) / 2); 
+        const mid = left + ((right - left) >> 1);
 
         if (guess(mid) <= 0) {
             right = mid;
