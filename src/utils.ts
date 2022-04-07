@@ -28,3 +28,76 @@ export class Node {
         this.random = (random === undefined ? null : random)
     }
 }
+
+class LinkedNode<T = any> {
+    constructor(
+        public val: T,
+        public next: LinkedNode | null = null,
+    ) { }
+}
+
+export class Queue<T = any> {
+    public size: number;
+    private head: LinkedNode<T> | null;
+    private tail: LinkedNode<T> | null;
+
+    constructor() {
+        this.size = 0;
+        this.head = null;
+        this.tail = null;
+    }
+
+    /** 入队 */
+    enQueue(value: T): void {
+        const newNode = new LinkedNode<T>(value);
+        // 当前链表还是空
+        if (this.size === 0) {
+            this.head = newNode;
+            this.tail = newNode;
+        } else {
+            const tailNode = this.tail!;
+            tailNode.next = newNode;
+            this.tail = newNode;
+        }
+
+        this.size++;
+    }
+
+    /** 出队 */
+    deQueue(): T | null {
+        if (this.size === 0) {
+            return null;
+        }
+
+        const headNode = this.head!;
+        this.head = headNode.next;
+        this.size--;
+
+        if (this.size === 0) {
+            this.tail = null;
+        }
+
+        return headNode.val;
+    }
+
+    /** 是否为空 */
+    isEmpty(): boolean {
+        return this.size === 0;
+    }
+
+    /** 获取队列顶部 */
+    front(): T | null {
+        if (this.size === 0) {
+            return null;
+        }
+
+        return this.head!.val;
+    }
+
+    /** 清空 */
+    clear(): void {
+        this.size = 0;
+        this.head = null;
+        this.tail = null;
+    }
+}
