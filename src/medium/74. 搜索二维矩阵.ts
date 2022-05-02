@@ -49,3 +49,5 @@ function binarySearch(arr: number[], target: number): boolean {
 
     return false;
 }
+
+export { };
