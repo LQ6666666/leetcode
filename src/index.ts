@@ -83,6 +83,7 @@
 // import "./hard/23. 合并K个升序链表";
 // import "./hard/273. 整数转换英文表示";
 // import "./hard/352. 将数据流变为多个不相交区间";
+import "./hard/591. 标签验证器";
 
 /* offer */
 // import "./offer/剑指 Offer 62. 圆圈中最后剩下的数字";
