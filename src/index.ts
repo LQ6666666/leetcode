@@ -23,6 +23,7 @@
 // import "./easy/482. 密钥格式化";
 // import "./easy/506. 相对名次";
 // import "./easy/507. 完美数";
+// import "./easy/557. 反转字符串中的单词 III";
 // import "./easy/563. 二叉树的坡度";
 // import "./easy/575. 分糖果";
 // import "./easy/594. 最长和谐子序列";
@@ -42,6 +43,7 @@
 // import "./easy/1629. 按键持续时间最长的键";
 // import "./easy/1716. 计算力扣银行的钱";
 // import "./easy/1816. 截断句子";
+import "./easy/1880. 检查某单词是否等于两单词之和";
 // import "./easy/2022. 将一维数组转变成二维数组";
 // import "./easy/2047. 句子中的有效单词数";
 
@@ -83,7 +85,7 @@
 // import "./hard/23. 合并K个升序链表";
 // import "./hard/273. 整数转换英文表示";
 // import "./hard/352. 将数据流变为多个不相交区间";
-import "./hard/591. 标签验证器";
+// import "./hard/591. 标签验证器";
 
 /* offer */
 // import "./offer/剑指 Offer 62. 圆圈中最后剩下的数字";
