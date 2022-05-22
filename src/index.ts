@@ -43,7 +43,7 @@
 // import "./easy/1629. 按键持续时间最长的键";
 // import "./easy/1716. 计算力扣银行的钱";
 // import "./easy/1816. 截断句子";
-import "./easy/1880. 检查某单词是否等于两单词之和";
+// import "./easy/1880. 检查某单词是否等于两单词之和";
 // import "./easy/2022. 将一维数组转变成二维数组";
 // import "./easy/2047. 句子中的有效单词数";
 
@@ -56,6 +56,7 @@ import "./easy/1880. 检查某单词是否等于两单词之和";
 // import "./medium/15. 三数之和";
 // import "./medium/19. 删除链表的倒数第 N 个结点";
 // import "./medium/38. 外观数列";
+import "./medium/43. 字符串相乘";
 // import "./medium/71. 简化路径";
 // import "./medium/89. 格雷编码";
 // import "./medium/187. 重复的DNA序列";
