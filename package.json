@@ -6,7 +6,8 @@
   "scripts": {
     "start": "webpack serve --mode development --env development",
     "build": "webpack --mode production --env production",
-    "test": "jest"
+    "test": "jest",
+    "test-w": "jest --watch"
   },
   "author": "",
   "license": "ISC",
