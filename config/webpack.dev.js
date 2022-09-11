@@ -1,9 +1,8 @@
-
 module.exports = {
-    mode: "development",
-    devtool: "source-map",
-    devServer: {
-        hot: true,
-    },
-    plugins: [],
-}
+  mode: "development",
+  devtool: "source-map",
+  devServer: {
+    hot: true,
+  },
+  plugins: [],
+};
