@@ -3,6 +3,11 @@ function sortArray(nums: number[]): number[] {
   // return bubblingSort(nums);
 };
 
+/**
+ * 快速排序
+ * @param nums 需要排序的数组
+ * @returns 排序后的数组
+ */
 function quickSort(nums: number[]): number[] {
   const n = nums.length;
   if (n === 0) return [];
@@ -30,6 +35,11 @@ function quickSort(nums: number[]): number[] {
   return quickSort(leftArr).concat(middleArr).concat(quickSort(rightArr));
 }
 
+/**
+ * 冒泡排序
+ * @param nums 需要排序的数组
+ * @returns 排序后的数组
+ */
 function bubblingSort(nums: number[]): number[] {
   const n = nums.length;
 
