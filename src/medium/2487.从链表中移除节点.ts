@@ -26,4 +26,23 @@ function removeNodes(head: ListNode | null): ListNode | null {
   return prev;
 }
 
+function removeNodes1(head: ListNode | null): ListNode | null {
+  function dfs(node: ListNode): ListNode {
+    if (node.next === null) return node;
+
+    const temp = dfs(node.next);
+
+    if (temp.val > node.val) {
+      return temp;
+    }
+
+    node.next = temp;
+    return node;
+  }
+
+  if (head === null) return head;
+
+  return dfs(head);
+}
+
 export {};
