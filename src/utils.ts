@@ -10,12 +10,7 @@ export class TreeNode {
 }
 
 export class ListNode {
-  val: number;
-  next: ListNode | null;
-  constructor(val?: number, next?: ListNode | null) {
-    this.val = val === undefined ? 0 : val;
-    this.next = next === undefined ? null : next;
-  }
+  constructor(public val: number = 0, public next: ListNode | null = null) {}
 }
 
 export class Node {
