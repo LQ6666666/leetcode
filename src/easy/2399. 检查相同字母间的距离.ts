@@ -1,5 +1,3 @@
-export { };
-
 function checkDistances(s: string, distance: number[]): boolean {
   const n = s.length;
   const map = new Map<string, number>();
@@ -8,6 +6,7 @@ function checkDistances(s: string, distance: number[]): boolean {
     const ch = s[i];
     const index = map.get(ch);
 
+    // 第一次出现
     if (index === undefined) {
       map.set(ch, i);
     } else {
@@ -20,4 +19,6 @@ function checkDistances(s: string, distance: number[]): boolean {
   }
 
   return true;
-};
+}
+
+export {};
