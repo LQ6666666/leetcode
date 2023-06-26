@@ -1,8 +1,8 @@
 function pivotInteger(n: number): number {
   // 总和
-  let sum = (n * (n + 1)) >> 1;
+  const sum = (n * (n + 1)) >> 1;
 
-  // 之前元素和
+  // 前缀和
   let current = 0;
   for (let i = 1; i <= n; i++) {
     current += i;
@@ -18,4 +18,4 @@ function pivotInteger(n: number): number {
   return -1;
 }
 
-console.log(pivotInteger(8));
+export { pivotInteger };
