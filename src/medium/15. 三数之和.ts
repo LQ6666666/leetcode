@@ -1,4 +1,4 @@
-function threeSum1(nums: number[]): number[][] {
+function threeSum$(nums: number[]): number[][] {
   if (nums.length < 3) {
     return [];
   }
@@ -39,7 +39,7 @@ function threeSum1(nums: number[]): number[][] {
 }
 
 // 双指针
-function threeSum(nums: number[]): number[][] {
+function threeSum$$(nums: number[]): number[][] {
   const ans: number[][] = [];
   const n = nums.length;
   nums = nums.sort((a, b) => a - b);
@@ -70,6 +70,43 @@ function threeSum(nums: number[]): number[][] {
         // 找到答案时，双指针同时收缩
         right--;
         left++;
+      } else if (sum > 0) {
+        right--;
+      } else {
+        left++;
+      }
+    }
+  }
+
+  return ans;
+}
+
+function threeSum(nums: number[]): number[][] {
+  const n = nums.length;
+  nums.sort((a, b) => a - b);
+
+  const ans: number[][] = [];
+
+  for (let i = 0; i < n; i++) {
+    const num = nums[i];
+    if (num > 0) return ans;
+
+    if (i > 0 && num === nums[i - 1]) {
+      continue;
+    }
+
+    let left = i + 1;
+    let right = n - 1;
+
+    while (left < right) {
+      const leftNum = nums[left];
+      const rightNum = nums[right];
+      const sum = num + leftNum + rightNum;
+
+      if (sum === 0) {
+        ans.push([num, leftNum, rightNum]);
+        while (left < right && nums[left] === leftNum) left++;
+        while (left < right && nums[right] === rightNum) right--;
       } else if (sum > 0) {
         right--;
       } else {
