@@ -1,4 +1,4 @@
-function alternateDigitSum(n: number): number {
+function alternateDigitSum$(n: number): number {
   let sign = 1;
   let ans = 0;
 
@@ -10,6 +10,20 @@ function alternateDigitSum(n: number): number {
   }
 
   return ans * -sign;
+}
+
+function alternateDigitSum(n: number): number {
+  let sign = 1;
+  let ans = 0;
+
+  while (n > 0) {
+    ans += (n % 10) * sign;
+
+    sign = -sign;
+    n = Math.floor(n / 10);
+  }
+
+  return sign === 1 ? -ans : ans;
 }
 
 export { alternateDigitSum };
