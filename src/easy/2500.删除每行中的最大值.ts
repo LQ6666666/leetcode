@@ -20,4 +20,5 @@ function deleteGreatestValue(grid: number[][]): number {
 
   return ans;
 }
+
 export { deleteGreatestValue };
