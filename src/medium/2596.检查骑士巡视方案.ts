@@ -9,7 +9,7 @@ const positions = [
   [2, -1]
 ];
 
-function checkValidGrid(grid: number[][]): boolean {
+function checkValidGrid$(grid: number[][]): boolean {
   if (grid[0][0] !== 0) return false;
 
   const n = grid.length;
@@ -36,6 +36,32 @@ function checkValidGrid(grid: number[][]): boolean {
   }
 
   return true;
+}
+
+// dfs
+function checkValidGrid(grid: number[][]): boolean {
+  if (grid[0][0] !== 0) return false;
+  const n = grid.length;
+
+  let count = 1;
+  dfs(0, 0);
+  return count === n * n;
+
+  function dfs(i: number, j: number) {
+    for (const [px, py] of positions) {
+      const x = px + i;
+      const y = py + j;
+      if (x < 0 || x >= n || y < 0 || y >= n) {
+        continue;
+      }
+
+      const value = grid[x][y];
+      if (value === count) {
+        count++;
+        return dfs(x, y);
+      }
+    }
+  }
 }
 
 export {};
