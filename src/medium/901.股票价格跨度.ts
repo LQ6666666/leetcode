@@ -1,4 +1,4 @@
-class StockSpanner {
+class StockSpanner$ {
   private prices: number[];
 
   constructor() {
@@ -22,7 +22,7 @@ class StockSpanner {
   }
 }
 
-class StockSpanner1 {
+class StockSpanner$$ {
   // index：待插入的位置
   private index = 0;
   private prices: number[];
@@ -48,6 +48,27 @@ class StockSpanner1 {
     this.days[this.index] = this.index - p;
     // index加 1
     return this.days[this.index++];
+  }
+}
+
+class StockSpanner {
+  private stack: [day: number, price: number][];
+  private curDay: number;
+
+  constructor() {
+    // 这样无需判断栈为空的情况
+    this.stack = [[-1, Number.MAX_SAFE_INTEGER]];
+    // 第一个 next 调用算作第 0 天
+    this.curDay = -1;
+  }
+
+  next(price: number): number {
+    while (price >= this.stack.at(-1)![1]) {
+      // 栈顶数据后面不会再用到了，因为 price 更大
+      this.stack.pop();
+    }
+    this.stack.push([++this.curDay, price]);
+    return this.curDay - this.stack.at(-2)![0];
   }
 }
 
