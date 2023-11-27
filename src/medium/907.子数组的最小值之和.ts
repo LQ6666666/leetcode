@@ -1,11 +1,11 @@
-// TODO: 没看懂
+const MOD = 1000000007;
+
 function sumSubarrayMins(arr: number[]): number {
-  // 利用单调栈向左找到第一个比A[i]小的数A[left]（遍历顺序为0->n-1)，也就是E辐射范围的左边界；
-  // 利用单调栈向右找到第一个比A[i]小的数A[right]（遍历顺序为n-1->0)，也就是E辐射范围的右边界；
-  // 将每个元素的贡献值求和得到最终答案
-  const MOD = 1000000007;
   const n = arr.length;
   if (n === 0) return 0;
+  // 利用单调栈向左找到第一个比 A[i] 小的数 A[left] （遍历顺序为 0 -> n-1)，也就是 E 辐射范围的左边界
+  // 利用单调栈向右找到第一个比 A[i] 小的数 A[right]（遍历顺序为 n-1 -> 0)，也就是 E 辐射范围的右边界
+  // 将每个元素的贡献值求和得到最终答案
 
   // 每个元素辐射范围的左边界
   const left = new Array<number>(n).fill(0);
@@ -52,11 +52,14 @@ function sumSubarrayMins(arr: number[]): number {
 
   // 按照贡献度计算即可
   // 注意此处 left[i] 和 right[i] 实际上记录的是左边界-1和右边界+1，和上面思路中有些区别，便于计算
+  // 以 arr[i] 为最小元素的连续子序列的数量为 (i − j) * (k − i)
   let ans = 0;
   for (let i = 0; i < n; i++) {
     ans = (ans + (i - left[i]) * (right[i] - i) * arr[i]) % MOD;
   }
   return ans;
 }
+
+// console.log(sumSubarrayMins([3, 1, 2, 4]));
 
 export {};
