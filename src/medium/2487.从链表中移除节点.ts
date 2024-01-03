@@ -1,6 +1,7 @@
 import { ListNode } from "src/utils";
 
-function removeNodes(head: ListNode | null): ListNode | null {
+/** 栈 */
+function removeNodes$(head: ListNode | null): ListNode | null {
   let cur: ListNode | null = head;
   let stack: ListNode[] = [];
 
@@ -26,7 +27,8 @@ function removeNodes(head: ListNode | null): ListNode | null {
   return prev;
 }
 
-function removeNodes1(head: ListNode | null): ListNode | null {
+/** 递归 */
+function removeNodes$$(head: ListNode | null): ListNode | null {
   function dfs(node: ListNode): ListNode {
     if (node.next === null) return node;
 
@@ -43,6 +45,38 @@ function removeNodes1(head: ListNode | null): ListNode | null {
   if (head === null) return head;
 
   return dfs(head);
+}
+
+/** 反转链表 */
+function removeNodes(head: ListNode | null): ListNode | null {
+  head = reserve(head);
+
+  let cur = head;
+  while (cur && cur.next) {
+    if (cur.val > cur.next.val) {
+      cur.next = cur.next.next;
+    } else {
+      cur = cur.next;
+    }
+  } 
+
+  return reserve(head);
+}
+
+function reserve(head: ListNode | null): ListNode | null {
+  if (head === null) return null;
+  let prev: ListNode | null = null;
+  let cur: ListNode | null = head;
+
+  while (cur) {
+    const next: ListNode | null = cur.next;
+
+    cur.next = prev;
+    prev = cur;
+    cur = next;
+  }
+
+  return prev;
 }
 
 export {};
