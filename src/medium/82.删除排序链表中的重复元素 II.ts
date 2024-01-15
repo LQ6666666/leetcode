@@ -1,6 +1,6 @@
 import { ListNode } from "../utils";
 
-function deleteDuplicates(head: ListNode | null): ListNode | null {
+function deleteDuplicates$(head: ListNode | null): ListNode | null {
   if (head === null) return head;
 
   const newHead = new ListNode(0);
@@ -24,6 +24,26 @@ function deleteDuplicates(head: ListNode | null): ListNode | null {
 
   t.next = null;
   return newHead.next;
+}
+
+function deleteDuplicates(head: ListNode | null): ListNode | null {
+  if (head === null || head.next === null) return head;
+
+  const dummy = new ListNode(0, head);
+  let current = dummy;
+
+  while (current.next && current.next.next) {
+    const x = current.next.val;
+    if (x === current.next.next.val) {
+      while (x === current.next?.val) {
+        current.next = current.next.next;
+      }
+    } else {
+      current = current.next;
+    }
+  }
+
+  return dummy.next;
 }
 
 export { deleteDuplicates };
