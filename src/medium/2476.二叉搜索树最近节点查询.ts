@@ -39,7 +39,7 @@ function binarySearch(arr: number[], target: number) {
     right = arr.length - 1;
 
   while (left <= right) {
-    const mid = left + ((right - left) >>> 1);
+    const mid = left + ((right - left) >> 1);
     const cur = arr[mid];
 
     if (cur === target) {
