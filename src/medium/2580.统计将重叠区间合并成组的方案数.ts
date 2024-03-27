@@ -15,7 +15,7 @@ function countWays(ranges: number[][]): number {
   }
 
   let ans = 1;
-  while (count >= 0) {
+  while (count-- >= 0) {
     ans = (ans * 2) % MOD;
   }
   return ans;
