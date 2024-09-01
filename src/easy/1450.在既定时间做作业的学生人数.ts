@@ -1,4 +1,4 @@
-export { };
+export {};
 
 /*
 function busyStudent(startTime: number[], endTime: number[], queryTime: number): number {
@@ -15,11 +15,11 @@ function busyStudent(startTime: number[], endTime: number[], queryTime: number):
 */
 
 function busyStudent(startTime: number[], endTime: number[], queryTime: number): number {
-    // 找到在开始和结束之前
-    return startTime.reduce((ans, cur, idx) => {
-        if (cur <= queryTime && endTime[idx] >= queryTime) {
-            ans++;
-        }
-        return ans;
-    }, 0);
-};
+  // 找到在开始和结束之前
+  return startTime.reduce((ans, cur, idx) => {
+    if (cur <= queryTime && endTime[idx] >= queryTime) {
+      ans++;
+    }
+    return ans;
+  }, 0);
+}
