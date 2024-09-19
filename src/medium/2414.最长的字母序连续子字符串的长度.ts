@@ -6,14 +6,13 @@ function longestContinuousSubstring(s: string): number {
   for (let i = 1; i < n; i++) {
     if (s[i].charCodeAt(0) - s[i - 1].charCodeAt(0) === 1) {
       count++;
+      ans = Math.max(ans, count);
     } else {
       count = 1;
     }
-
-    ans = Math.max(ans, count);
   }
 
   return ans;
-};
+}
 
-export { longestContinuousSubstring }
+export { longestContinuousSubstring };
