@@ -1,4 +1,5 @@
-import { vowelStrings } from "../2559.统计范围内的元音字符串数";
+import { describe, expect, it } from "vitest";
+import { vowelStrings } from "./2559.统计范围内的元音字符串数";
 
 describe("统计范围内的元音字符串数", () => {
   it("1.test", () => {

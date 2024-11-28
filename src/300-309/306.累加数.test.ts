@@ -1,4 +1,5 @@
-import { isAdditiveNumber } from "../306.累加数";
+import { describe, it, expect } from "vitest";
+import { isAdditiveNumber } from "./306.累加数";
 
 describe('true', () => {
   it('112358', () => {

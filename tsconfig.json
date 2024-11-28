@@ -1,18 +1,18 @@
 {
   "compilerOptions": {
-    "rootDir": ".",
-    "baseUrl": ".",
-    "lib": ["DOM", "ESNext"],
-    "types": ["node", "jest"],
     "target": "ESNext",
-    "esModuleInterop": true,
-    "moduleResolution": "bundler",
-    "forceConsistentCasingInFileNames": true,
+    "module": "ESNext",
     "strict": true,
+    "sourceMap": true,
     "skipLibCheck": true,
+    "lib": ["ESNext"],
+    "moduleResolution": "node",
+    "types": ["node"],
+    "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["src/*"]
     }
   },
-  "include": ["src"]
+  "include": ["src"],
+  "exclude": ["node_modules"]
 }

@@ -1,4 +1,5 @@
-import { specialArray } from "../1608.特殊数组的特征值";
+import { describe, it, expect } from "vitest";
+import { specialArray } from "./1608.特殊数组的特征值";
 
 describe("暴力", () => {
   it("1.test", () => {

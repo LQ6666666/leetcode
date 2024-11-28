@@ -1,4 +1,5 @@
-import { maxSum } from "../2815.数组中的最大数对和";
+import { describe, it, expect } from "vitest";
+import { maxSum } from "./2815.数组中的最大数对和";
 
 describe("2815.数组中的最大数对和", () => {
   it("存在满足数位上最大的数字相等", () => {
