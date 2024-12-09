@@ -1,4 +1,4 @@
-function squareIsWhite(coordinates: string): boolean {
+function squareIsWhite$(coordinates: string): boolean {
   // 1.构建棋盘
   const chessboard = Array.from({ length: 8 }, (_, y) =>
     Array.from({ length: 8 }, (_, x) => {
@@ -12,6 +12,10 @@ function squareIsWhite(coordinates: string): boolean {
   const row = 8 - +coordinates[1];
 
   return chessboard[row][col];
+}
+
+function squareIsWhite(s: string): boolean {
+  return s.charCodeAt(0) % 2 !== s.charCodeAt(1) % 2;
 }
 
 export { squareIsWhite };
