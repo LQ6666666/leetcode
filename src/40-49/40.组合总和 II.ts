@@ -1,8 +1,13 @@
 function combinationSum2(candidates: number[], target: number): number[][] {
+  candidates.sort((a, b) => a - b);
+
   const n = candidates.length;
+
   const ans: number[][] = [];
-  let sum = 0,
-    path: number[] = [];
+  let sum = 0;
+  const path: number[] = [];
+
+  return dfs(0), ans;
 
   function dfs(startIndex: number) {
     if (sum === target) {
@@ -33,11 +38,6 @@ function combinationSum2(candidates: number[], target: number): number[][] {
       sum -= value;
     }
   }
-
-  candidates.sort((a, b) => a - b);
-  dfs(0);
-
-  return ans;
 }
 
 export { combinationSum2 };
