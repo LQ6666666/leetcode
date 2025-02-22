@@ -1,25 +1,25 @@
 function similarPairs(words: string[]): number {
   const n = words.length;
-  const formatWords = new Array(n);
 
-  for (let i = 0; i < n; i++) {
+  const arr = new Array<number>(n);
+  for (let i = 0; i < words.length; i++) {
     const word = words[i];
-    const array = new Array<number>(26).fill(0);
+    let num = 0;
     for (const ch of word) {
-      array[ch.charCodeAt(0) - 97] = 1;
+      const x = ch.charCodeAt(0) - 97;
+      num |= 1 << x;
     }
-    formatWords[i] = array.toString();
+    arr[i] = num;
   }
 
   let ans = 0;
   for (let i = 0; i < n; i++) {
     for (let j = i + 1; j < n; j++) {
-      if (formatWords[i] === formatWords[j]) {
+      if (arr[i] === arr[j]) {
         ans++;
       }
     }
   }
-
   return ans;
 }
 
