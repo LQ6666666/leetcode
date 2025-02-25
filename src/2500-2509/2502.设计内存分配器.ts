@@ -26,7 +26,7 @@ class Allocator {
     return start;
   }
 
-  free(mID: number): number {
+  freeMemory(mID: number): number {
     let count = 0;
     for (let i = 0; i < this.n; i++) {
       if (this.arr[i] === mID) {
