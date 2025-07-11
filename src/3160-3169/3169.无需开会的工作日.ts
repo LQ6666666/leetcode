@@ -5,8 +5,6 @@ function countDays(days: number, meetings: number[][]): number {
   // 当前合并区间的左右端点
   let start = 1,
     end = 0;
-  const n = meetings.length;
-  let max = 0;
   for (const p of meetings) {
     if (p[0] > end) {
       // 不相交
