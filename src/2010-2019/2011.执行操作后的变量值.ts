@@ -1,4 +1,4 @@
-const operationToValue = new Map();
+const operationToValue = new Map<string, number>();
 operationToValue.set("++X", 1);
 operationToValue.set("X++", 1);
 operationToValue.set("--X", -1);
@@ -12,4 +12,4 @@ function finalValueAfterOperations(operations: string[]): number {
   return ans;
 }
 
-export { finalValueAfterOperations };
+export {};
