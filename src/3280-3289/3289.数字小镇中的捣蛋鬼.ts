@@ -1,5 +1,5 @@
 function getSneakyNumbers(nums: number[]): number[] {
-  const set = new Set();
+  const set = new Set<number>();
   const ans: number[] = [];
 
   for (const num of nums) {
