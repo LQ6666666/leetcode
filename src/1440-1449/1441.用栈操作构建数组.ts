@@ -1,24 +1,20 @@
 function buildArray(target: number[], n: number): string[] {
-  const t = target.at(-1)!;
-  let index = 1;
-  const ans: string[] = [];
+  const m = target.length;
+  const ans: ("Push" | "Pop")[] = [];
+  let index = 0;
 
-  let i = 0;
-  while (index !== t) {
-    ans.push("Push");
-
-    if (index !== target[i]) {
-      ans.push("Pop");
-    } else {
+  let i = 1;
+  while (index < m) {
+    while (i !== target[index]) {
+      ans.push("Push", "Pop");
       i++;
     }
-
+    i++;
     index++;
+    ans.push("Push");
   }
-
-  ans.push("Push");
 
   return ans;
 }
 
-export { buildArray };
+export {};
