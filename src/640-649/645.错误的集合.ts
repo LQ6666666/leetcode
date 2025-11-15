@@ -18,4 +18,4 @@ function findErrorNums(nums: number[]): number[] {
   return ans;
 }
 
-export { findErrorNums };
+export {};
