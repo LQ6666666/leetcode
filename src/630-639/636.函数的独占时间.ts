@@ -1,0 +1,27 @@
+function exclusiveTime(n: number, logs: string[]): number[] {
+  const ans = new Array<number>(n).fill(0);
+  const stack: number[] = [];
+  let he = 0;
+  let ta = 0;
+  let cur = -1;
+
+  for (const log of logs) {
+    const ss = log.split(":");
+    const [idx, flag, ttl] = [+ss[0], ss[1], +ss[2]];
+    if (flag === "start") {
+      if (he < ta) {
+        ans[stack[ta - 1]] += ttl - cur;
+      }
+      stack[ta++] = idx;
+      cur = ttl;
+    } else {
+      const fnc = stack[--ta];
+      ans[fnc] += ttl - cur + 1;
+      cur = ttl + 1;
+    }
+  }
+
+  return ans;
+}
+
+export {};
