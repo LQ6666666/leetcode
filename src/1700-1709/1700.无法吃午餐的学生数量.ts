@@ -1,14 +1,12 @@
 function countStudents(students: number[], sandwiches: number[]): number {
-  let roundCount = 0,
-    squareCount = 0;
+  const n = sandwiches.length;
+  let roundCount = 0;
+  let squareCount = 0;
 
   for (const shape of students) {
-    if (shape === 0) {
-      roundCount++;
-    } else {
-      squareCount++;
-    }
+    squareCount += shape;
   }
+  roundCount = n - squareCount;
 
   for (const shape of sandwiches) {
     if (shape === 0) {
@@ -28,3 +26,5 @@ function countStudents(students: number[], sandwiches: number[]): number {
 
   return 0;
 }
+
+export {};
