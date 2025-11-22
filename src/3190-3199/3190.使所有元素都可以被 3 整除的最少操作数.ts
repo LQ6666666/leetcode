@@ -1,12 +1,11 @@
 function minimumOperations(nums: number[]): number {
+  const n = nums.length;
   let ans = 0;
-  for (let num of nums) {
-    if (num >= 3) {
-      num %= 3;
-    }
-    ans += Math.min(num, 3 - num);
+  for (let i = 0; i < n; i++) {
+    const num = nums[i];
+    ans += Math.min(3 - (num % 3), num % 3);
   }
   return ans;
 }
 
-export { minimumOperations };
+export {};
