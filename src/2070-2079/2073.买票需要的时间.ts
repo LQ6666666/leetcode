@@ -1,17 +1,16 @@
 function timeRequiredToBuy(tickets: number[], k: number): number {
   const n = tickets.length;
-  let count = 0;
+  let ans = 0;
   let i = 0;
-  while (tickets[k] !== 0) {
+  while (tickets[k] > 0) {
     if (tickets[i] > 0) {
       tickets[i]--;
-      count++;
+      ans++;
     }
 
-    i++;
-    i = i % n;
+    i = (i + 1) % n;
   }
-  return count;
+  return ans;
 }
 
 export {};
