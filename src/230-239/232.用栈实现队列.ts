@@ -12,26 +12,28 @@ class MyQueue {
   }
 
   pop(): number {
-    this.checkOutStack();
+    if (!this.outStack.length) {
+      this.in2out();
+    }
     return this.outStack.pop()!;
   }
 
   peek(): number {
-    this.checkOutStack();
-    return this.outStack.at(-1)!;
+    if (!this.outStack.length) {
+      this.in2out();
+    }
+    return this.outStack[this.outStack.length - 1];
   }
 
   empty(): boolean {
     return this.inStack.length === 0 && this.outStack.length === 0;
   }
 
-  private checkOutStack() {
-    if (this.outStack.length === 0) {
-      while (this.inStack.length) {
-        this.outStack.push(this.inStack.pop()!);
-      }
+  private in2out() {
+    while (this.inStack.length) {
+      this.outStack.push(this.inStack.pop()!);
     }
   }
 }
 
-export { MyQueue };
+export {};
