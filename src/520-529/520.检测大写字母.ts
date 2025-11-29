@@ -1,51 +1,41 @@
-function detectCapitalUse$(word: string): boolean {
-  const upperCaseReg: RegExp = /^[A-Z]+$/;
-  const lowerCaseReg: RegExp = /^[a-z]+$/;
-
-  // 全部是大写字母
-  if (upperCaseReg.test(word)) {
-    return true;
-  }
-
-  // 全部是小写字母
-  if (lowerCaseReg.test(word)) {
-    return true;
-  }
-
-  // 首字母是大写字母，其他都是小写字母
-  if (/^[A-Z]$/.test(word[0])) {
-    return lowerCaseReg.test(word.substr(1));
-  } else {
-    return false;
-  }
-}
-
 function detectCapitalUse(word: string): boolean {
   const n = word.length;
 
-  let flag = true;
-  for (let i = 1; i < n && flag === true; i++) {
-    if (
-      (word[0].charCodeAt(0) < "a".charCodeAt(0) && word[i].charCodeAt(0) < "a".charCodeAt(0)) ||
-      (word[0].charCodeAt(0) >= "a".charCodeAt(0) && word[i].charCodeAt(0) >= "a".charCodeAt(0))
-    ) {
-      continue;
+  if (isUpper(word[0])) {
+    if (n > 1) {
+      if (isUpper(word[1])) {
+        for (let i = 2; i < n; i++) {
+          if (!isUpper(word[i])) {
+            return false;
+          }
+        }
+      } else {
+        for (let i = 2; i < n; i++) {
+          if (!isLower(word[i])) {
+            return false;
+          }
+        }
+      }
     }
-    flag = false;
-  }
-
-  if (flag) return true;
-
-  if (word[0].charCodeAt(0) < "a".charCodeAt(0)) {
+  } else {
     for (let i = 1; i < n; i++) {
-      if (word[i].charCodeAt(0) < "a".charCodeAt(0)) {
+      if (!isLower(word[i])) {
         return false;
       }
     }
-    return true;
-  } else {
-    return false;
   }
+
+  return true;
+}
+
+function isUpper(c: string): boolean {
+  const code = c.charCodeAt(0);
+  return code >= 65 && code <= 90;
+}
+
+function isLower(c: string): boolean {
+  const code = c.charCodeAt(0);
+  return code >= 97 && code <= 122;
 }
 
 export { detectCapitalUse };
