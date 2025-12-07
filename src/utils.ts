@@ -24,7 +24,7 @@ export class Node {
   }
 }
 
-class LinkedNode<T = any> {
+export class LinkedNode<T = any> {
   constructor(public val: T, public next: LinkedNode | null = null) {}
 }
 
