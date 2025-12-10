@@ -1,24 +1,20 @@
 function maxRepeating(sequence: string, word: string): number {
-  const n = sequence.length;
-  const m = word.length;
-  let ans: number = 0;
+  const m = sequence.length;
+  const n = word.length;
+  let ans = 0;
+  if (m < n) return ans;
 
-  // 找到第一个 word
-  let idx = sequence.indexOf(word, 0);
-
-  if (idx === -1) return ans;
-  ans++;
-  idx += m;
-
-  while (idx < n) {
-    for (let i = 0; i < m; i++) {
-      if (sequence[i + idx] !== word[i]) {
-        return Math.max(ans, maxRepeating(sequence.slice(idx + (idx - 1 === 0 ? 1 : -1)), word));
-      }
+  let left = 0;
+  let right = Math.floor(m / n);
+  while (left <= right) {
+    const count = left + Math.floor((right - left) / 2);
+    const sub = word.repeat(count);
+    if (sequence.includes(sub)) {
+      ans = count;
+      left = count + 1;
+    } else {
+      right = count - 1;
     }
-
-    idx += m;
-    ans++;
   }
 
   return ans;
