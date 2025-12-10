@@ -21,4 +21,4 @@ function reformatDate(date: string): string {
   return `${year}-${MouthMap.get(mouth)!}-${parseInt(day).toString().padStart(2, "0")}`;
 }
 
-export { reformatDate };
+export {};
