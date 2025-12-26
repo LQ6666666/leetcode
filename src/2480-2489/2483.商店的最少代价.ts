@@ -22,4 +22,4 @@ function bestClosingTime(customers: string): number {
   return ans;
 }
 
-export { bestClosingTime };
+export {};
