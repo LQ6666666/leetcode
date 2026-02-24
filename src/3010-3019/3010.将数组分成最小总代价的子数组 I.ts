@@ -4,4 +4,4 @@ function minimumCost(nums: number[]): number {
   return a + b + c;
 }
 
-export { minimumCost };
+export {};

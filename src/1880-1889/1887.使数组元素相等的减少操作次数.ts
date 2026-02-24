@@ -14,4 +14,4 @@ function reductionOperations(nums: number[]): number {
   return ans;
 }
 
-export { reductionOperations };
+export {};

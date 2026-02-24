@@ -25,4 +25,4 @@ function getSum(node: TreeNode | null): number {
   return node.val + getSum(node.left) + getSum(node.right);
 }
 
-export { maxProduct };
+export {};

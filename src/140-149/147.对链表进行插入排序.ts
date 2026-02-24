@@ -7,9 +7,11 @@ function insertionSortList(head: ListNode | null): ListNode | null {
   dummyHead.next = head;
   /** 链表的已排序部分的最后一个节点 */
   let lastSorted: ListNode = head;
+  /** 待插节点 */
   let current: ListNode | null = head.next;
 
   while (current) {
+    // 最后一个节点的值比待插节点的值小，则待插节点不用动，且变为最后节点
     if (lastSorted.val <= current.val) {
       lastSorted = lastSorted.next!;
     } else {

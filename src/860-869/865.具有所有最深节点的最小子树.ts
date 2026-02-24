@@ -20,4 +20,4 @@ function depth(node: TreeNode | null): number {
   return Math.max(depth(node.left), depth(node.right)) + 1;
 }
 
-export { subtreeWithAllDeepest };
+export {};
