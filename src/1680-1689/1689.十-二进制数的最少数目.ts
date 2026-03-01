@@ -1,5 +1,9 @@
 function minPartitions(n: string): number {
-  return Math.max(...n.split("").map(Number));
+  let ans = 0;
+  for (const c of n) {
+    ans = Math.max(+c, ans);
+  }
+  return ans;
 }
 
-export { minPartitions };
+export {};
