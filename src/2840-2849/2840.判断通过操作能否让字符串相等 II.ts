@@ -1,16 +1,12 @@
 function checkStrings(s1: string, s2: string): boolean {
   const n = s1.length;
-  const nums1: [number, number][] = Array.from<number, [number, number]>({ length: 26 }, () => [
-    0, 0
-  ]);
-  const nums2: [number, number][] = Array.from<number, [number, number]>({ length: 26 }, () => [
-    0, 0
-  ]);
+  const nums1 = Array.from<number, [number, number]>({ length: 26 }, () => [0, 0]);
+  const nums2 = Array.from<number, [number, number]>({ length: 26 }, () => [0, 0]);
 
   for (let i = 0; i < n; i++) {
-    const index = i % 2 === 0 ? 0 : 1;
-    nums1[s1[i].charCodeAt(0) - 97][index]++;
-    nums2[s2[i].charCodeAt(0) - 97][index]++;
+    const j = i % 2 === 0 ? 0 : 1;
+    nums1[s1[i].charCodeAt(0) - 97][j]++;
+    nums2[s2[i].charCodeAt(0) - 97][j]++;
   }
 
   for (let i = 0; i < 26; i++) {
@@ -22,4 +18,4 @@ function checkStrings(s1: string, s2: string): boolean {
   return true;
 }
 
-export { checkStrings };
+export {};
