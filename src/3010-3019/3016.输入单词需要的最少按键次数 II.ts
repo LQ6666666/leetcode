@@ -16,15 +16,7 @@ function minimumPushes(word: string): number {
   for (let i = 0; i < keys.length; i++) {
     const count = countMap.get(keys[i])!;
 
-    if (i < 8) {
-      ans += count;
-    } else if (i >= 8 && i < 16) {
-      ans += count * 2;
-    } else if (i >= 16 && i < 24) {
-      ans += count * 3;
-    } else {
-      ans += count * 4;
-    }
+    ans += (Math.floor(i / 8) + 1) * count;
   }
 
   return ans;
