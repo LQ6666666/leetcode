@@ -1,4 +1,4 @@
-function leftRigthDifference(nums: number[]): number[] {
+function leftRightDifference(nums: number[]): number[] {
   const n = nums.length;
   const sum = nums.reduce((prev, cur) => prev + cur);
   const ans = new Array<number>();
