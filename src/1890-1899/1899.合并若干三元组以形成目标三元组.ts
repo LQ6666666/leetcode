@@ -1,0 +1,15 @@
+function mergeTriplets(triplets: number[][], target: number[]): boolean {
+  const n = triplets.length;
+  let merged = [0, 0, 0];
+  for (let i = 0; i < n; i++) {
+    const triplet = triplets[i];
+    if (triplet[0] <= target[0] && triplet[1] <= target[1] && triplet[2] <= target[2]) {
+      merged[0] = Math.max(merged[0], triplet[0]);
+      merged[1] = Math.max(merged[1], triplet[1]);
+      merged[2] = Math.max(merged[2], triplet[2]);
+    }
+  }
+  return merged[0] === target[0] && merged[1] === target[1] && merged[2] === target[2];
+}
+
+export {};
