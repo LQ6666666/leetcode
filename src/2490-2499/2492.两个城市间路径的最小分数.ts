@@ -26,13 +26,5 @@ function minScore(n: number, roads: number[][]): number {
   }
 }
 
-// console.log(
-//   minScore(4, [
-//     [1, 2, 9],
-//     [2, 3, 6],
-//     [2, 4, 5],
-//     [1, 4, 7]
-//   ])
-// );
 
-export { minScore };
+export {  };
