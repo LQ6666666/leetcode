@@ -4,7 +4,7 @@ function isMiddleElementUnique(nums: number[]): boolean {
   for (let i = 0; i < n; i++) {
     map.set(nums[i], (map.get(nums[i]) ?? 0) + 1);
   }
-  return map.get(Math.floor(n / 2))! === 1;
+  return map.get(nums[Math.floor(n / 2)])! === 1;
 }
 
 export {};
