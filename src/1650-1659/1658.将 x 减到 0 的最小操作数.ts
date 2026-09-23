@@ -1,26 +1,23 @@
 function minOperations(nums: number[], x: number): number {
+  const n = nums.length;
   // 找到最长的连续子数组
   const target = nums.reduce((prev, cur) => prev + cur) - x;
-  const n = nums.length;
 
   let ans = n + 1;
-  let current = 0;
-  let left = 0,
-    right = 0;
-  while (left < n) {
-    while (right < n && target > current) {
-      current += nums[right++];
+  let sum = 0;
+  for (let i = 0, j = 0; j < n; j++) {
+    sum += nums[j];
+
+    while (i < n && sum > target) {
+      sum -= nums[i++];
     }
 
-    if (current === target) {
-      ans = Math.min(ans, n + left - right);
+    if (target === sum) {
+      ans = Math.min(ans, n - (j - i + 1));
     }
-
-    current -= nums[left++];
   }
 
   return ans > n ? -1 : ans;
 }
-
 
 export { minOperations };
