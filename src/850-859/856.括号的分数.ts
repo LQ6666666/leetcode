@@ -12,6 +12,6 @@ function scoreOfParentheses(s: string): number {
   }
 
   return point;
-};
+}
 
-export { scoreOfParentheses };
+export {};
