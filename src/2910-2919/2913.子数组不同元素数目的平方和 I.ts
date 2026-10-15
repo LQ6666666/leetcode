@@ -15,4 +15,4 @@ function sumCounts(nums: number[]): number {
   return ans;
 }
 
-export { sumCounts };
+export {};
