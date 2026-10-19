@@ -20,4 +20,4 @@ function targetIndices(nums: number[], target: number): number[] {
   return ans;
 }
 
-export { targetIndices };
+export {};
