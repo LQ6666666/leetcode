@@ -25,4 +25,4 @@ function countIslands(grid: number[][], k: number): number {
   }
 }
 
-export { countIslands };
+export {};
