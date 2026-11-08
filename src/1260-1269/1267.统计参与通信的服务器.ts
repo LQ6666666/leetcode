@@ -30,4 +30,4 @@ function countServers(grid: number[][]): number {
   return ans;
 }
 
-export { countServers };
+export {};
