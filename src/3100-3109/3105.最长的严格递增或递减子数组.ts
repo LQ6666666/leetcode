@@ -1,26 +1,23 @@
 function longestMonotonicSubarray(nums: number[]): number {
   const n = nums.length;
-  let length = 1;
-  let ans = length;
+  let count1 = 1;
+  let count2 = 1;
+  let ans = count1;
 
   for (let i = 1; i < n; i++) {
     if (nums[i - 1] < nums[i]) {
-      length++;
+      count1++;
     } else {
-      length = 1;
+      count1 = 1;
     }
-    ans = Math.max(ans, length);
-  }
 
-  length = 1;
-
-  for (let i = 1; i < n; i++) {
     if (nums[i - 1] > nums[i]) {
-      length++;
+      count2++;
     } else {
-      length = 1;
+      count2 = 1;
     }
-    ans = Math.max(ans, length);
+
+    ans = Math.max(ans, count1, count2);
   }
 
   return ans;
